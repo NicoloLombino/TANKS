@@ -13,6 +13,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bullet;
     public float shotTimer;
     public float shootDelay;
+    public GameObject particleShot;
 
     [Tooltip("the key for normal shoot")]
     public KeyCode shootKey;
@@ -44,6 +45,7 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetKey(shootKey))
         {
             NormalShot();
+
         }
 
         else if(Input.GetKeyDown(superShootKey))
@@ -58,12 +60,14 @@ public class PlayerShoot : MonoBehaviour
     {
         if (shootEnergy >= 0)
         {
-            shootEnergy -= 0.2f;
+            shootEnergy -= 0.05f;
 
             if (Time.time >= shotTimer)
             {
                 GameObject NormalBullet = Instantiate(bullet, hole.transform.position, hole.transform.rotation);
                 shotTimer = Time.time + shootDelay;
+                GameObject ShotFlash = Instantiate(particleShot, hole.transform.position, hole.transform.rotation);
+                Destroy(ShotFlash, 0.5f);
                 // add sound
             }
         }
@@ -75,6 +79,9 @@ public class PlayerShoot : MonoBehaviour
         {
             GameObject NormalBullet = Instantiate(superBullet, hole.transform.position, hole.transform.rotation);
             superShotAmmo--;
+            GameObject ShotFlash = Instantiate(particleShot, hole.transform.position, hole.transform.rotation);
+            ShotFlash.transform.localScale += new Vector3(2, 2, 2);
+            Destroy(ShotFlash, 0.5f);
             // add sound
         }
     }
