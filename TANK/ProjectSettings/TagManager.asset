@@ -8,6 +8,7 @@ TagManager:
   - tank
   - wall
   - bullet
+  - flames
   layers:
   - Default
   - TransparentFX

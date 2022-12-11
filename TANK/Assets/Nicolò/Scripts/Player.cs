@@ -84,7 +84,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void UpdateHealth(int damage)
+    public void UpdateHealth(float damage)
     {
         health -= damage;
         healthUI.fillAmount = health / maxHealth;
@@ -112,6 +112,12 @@ public class Player : MonoBehaviour
                 //particleSystemMove.SetActive(true);
             }
         }
+
+        if (other.gameObject.tag == "flames")
+        {
+            int damage = other.GetComponent<Bullet>().damage;
+            UpdateHealth(damage);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -121,6 +127,7 @@ public class Player : MonoBehaviour
             int damage = other.GetComponent<Bullet>().damage;
             UpdateHealth(damage);
             GameObject BulletExplosion = Instantiate(other.gameObject.GetComponent<Bullet>().hitParticle, other.gameObject.transform.position + new Vector3(0f, 0f, 0f), Quaternion.identity);
+            BulletExplosion.transform.parent = gameObject.transform;
             Destroy(BulletExplosion, 1f);
             Destroy(other.gameObject);
         }

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerShoot : MonoBehaviour
 {
+    [Tooltip("mi serve per il missile telecomandato (missile) per dare il target")]
+    public GameObject TANK_ENEMY;
+
     public GameObject hole;
 
     [Header("all for normal shot")]
@@ -21,9 +24,24 @@ public class PlayerShoot : MonoBehaviour
     [Header("all for super shot")]
     public KeyCode superShootKey;
     public int superShotAmmo;
+    public int superShotAmmoMax;
     public GameObject superBullet;
     public Text superAmmoText;
 
+    public bool superShotActive;
+    public bool flamethrowerActive;
+    public bool mineActive;
+    public bool turretActive;
+    public bool missileActive;
+
+    public GameObject flamethrowerObject;
+    public Image flamethrowerBar;
+    public float flamethrowerEnergy;
+
+    public float SuperDelay;
+    public float SuperDeleyTime;
+
+    public GameObject[] superShots;
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +55,12 @@ public class PlayerShoot : MonoBehaviour
         shootEnergyUI.fillAmount = shootEnergy / 100;
         superAmmoText.text = superShotAmmo.ToString();
 
-        if(shootEnergy >= 100)
+        if (flamethrowerActive == true)
         {
-            shootEnergy = 100;
+            flamethrowerBar.fillAmount = flamethrowerEnergy / 100;
         }
+
+        ControlEnergyValue();
 
         if (Input.GetKey(shootKey))
         {
@@ -48,12 +68,42 @@ public class PlayerShoot : MonoBehaviour
 
         }
 
-        else if(Input.GetKeyDown(superShootKey))
+        else if(Input.GetKeyDown(superShootKey) && superShotActive)
         {
             SuperShot();
         }
 
-        else { shootEnergy += 1; }
+        else if (Input.GetKeyDown(superShootKey) && missileActive)
+        {
+            Missile();
+        }
+
+        else if (Input.GetKey(superShootKey) && flamethrowerActive)
+        {
+            FlameThrower();
+        }
+
+        else if (Input.GetKeyUp(superShootKey) && flamethrowerActive)
+        {
+            flamethrowerObject.SetActive(false);
+        }
+
+        else if (Input.GetKeyDown(superShootKey) && mineActive)
+        {
+            Mine();
+        }
+
+        else if (Input.GetKeyDown(superShootKey) && turretActive)
+        {
+            Turrect();
+        }
+
+
+        else
+        { 
+            shootEnergy += 0.07f;
+            flamethrowerEnergy += 0.02f;
+        }
     }
 
     void NormalShot()
@@ -77,13 +127,153 @@ public class PlayerShoot : MonoBehaviour
     {
         if (superShotAmmo >= 1)
         {
-            GameObject NormalBullet = Instantiate(superBullet, hole.transform.position, hole.transform.rotation);
+            GameObject SuperBullet = Instantiate(superBullet, hole.transform.position, hole.transform.rotation);
             superShotAmmo--;
-            GameObject ShotFlash = Instantiate(particleShot, hole.transform.position, hole.transform.rotation);
-            ShotFlash.transform.localScale += new Vector3(2, 2, 2);
-            Destroy(ShotFlash, 0.5f);
+            GameObject S_ShotFlash = Instantiate(particleShot, hole.transform.position, hole.transform.rotation);
+            S_ShotFlash.transform.localScale += new Vector3(2, 2, 2);
+            Destroy(S_ShotFlash, 0.5f);
             // add sound
         }
     }
+
+    void FlameThrower()
+    {
+        if (flamethrowerEnergy >= 0)
+        {
+            flamethrowerObject.SetActive(true);
+            flamethrowerEnergy -= 0.08f;
+        }
+
+        else { flamethrowerObject.SetActive(false); }
+    }
+
+    void Mine()
+    {
+        if (superShotAmmo >= 1)
+        {
+            GameObject SuperMine = Instantiate(superBullet, gameObject.transform.position, gameObject.transform.rotation);
+            superShotAmmo--;
+        }
+    }
+
+    void Turrect()
+    {
+        if (superShotAmmo >= 1)
+        {
+            GameObject SuperTurret = Instantiate(superBullet, gameObject.transform.position, gameObject.transform.rotation);
+            superShotAmmo--;
+        }
+    }
+
+    void Missile()
+    {
+        if (superShotAmmo >= 1)
+        {
+            GameObject SuperMissile = Instantiate(superBullet, hole.transform.position, hole.transform.rotation);
+            SuperMissile.GetComponent<Missile>().target = TANK_ENEMY;
+            superShotAmmo--;
+            GameObject S_ShotFlash = Instantiate(particleShot, hole.transform.position, hole.transform.rotation);
+            S_ShotFlash.transform.localScale += new Vector3(2, 2, 2);
+            Destroy(S_ShotFlash, 0.5f);
+            // add sound
+        }
+    }
+
+    void ControlEnergyValue()
+    {
+        if (shootEnergy >= 100)
+        {
+            shootEnergy = 100;
+        }
+
+        if (flamethrowerEnergy >= 100)
+        {
+            flamethrowerEnergy = 100;
+        }
+
+        if(flamethrowerActive == true)
+        {
+            shootEnergyUI.fillAmount = shootEnergy / 100;
+        }
+
+        if (Time.time >= SuperDelay && superShotAmmo < superShotAmmoMax)
+        {
+            superShotAmmo++;
+            SuperDelay = Time.time + SuperDeleyTime;
+        }
+    }
+
+    public void SuperShotActive()
+    {
+        superShotActive = true;
+        flamethrowerActive = false;
+        mineActive = false;
+        //turretActive = false;
+        missileActive = false;
+        flamethrowerBar.enabled = false;
+
+        superBullet = superShots[0];
+        superShotAmmoMax = 6;
+        superShotAmmo = superShotAmmoMax;
+        SuperDeleyTime = 8;
+    }
+
+    public void FlameThrowerActive()
+    {
+        flamethrowerBar.enabled = true;
+        flamethrowerActive = true;
+        superShotActive = false;
+        mineActive = false;
+        //turretActive = false;
+        missileActive = false;
+    }
+
+    public void MineActive()
+    {
+        mineActive = true;
+        flamethrowerBar.enabled = false;
+        flamethrowerActive = false;
+        superShotActive = false;
+        //turretActive = false;
+        missileActive = false;
+
+        superBullet = superShots[1];
+        superShotAmmoMax = 7;
+        superShotAmmo = superShotAmmoMax;
+        SuperDeleyTime = 5;
+    }
+
+    public void TurretActive()
+    {
+        turretActive = true;
+        mineActive = false;
+        flamethrowerBar.enabled = false;
+        flamethrowerActive = false;
+        superShotActive = false;
+        missileActive = false;
+
+        superBullet = superShots[2];
+        superShotAmmoMax = 3;
+        superShotAmmo = superShotAmmoMax;
+        SuperDeleyTime = 10;
+    }
+    public void MissileActive()
+    {
+        missileActive = true;
+        mineActive = false;
+        flamethrowerBar.enabled = false;
+        flamethrowerActive = false;
+        superShotActive = false;
+        //turretActive = false;
+
+        superBullet = superShots[3];
+        superShotAmmoMax = 3;
+        superShotAmmo = superShotAmmoMax;
+        SuperDeleyTime = 15;
+    }
+
+
+
+
 
 }
