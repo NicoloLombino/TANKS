@@ -160,7 +160,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (superShotAmmo >= 1)
         {
-            GameObject SuperTurret = Instantiate(superBullet, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject SuperTurret = Instantiate(superBullet, gameObject.transform.position + new Vector3(0,0.5f,0), gameObject.transform.rotation);
             superShotAmmo--;
         }
     }
@@ -208,7 +208,7 @@ public class PlayerShoot : MonoBehaviour
         superShotActive = true;
         flamethrowerActive = false;
         mineActive = false;
-        //turretActive = false;
+        turretActive = false;
         missileActive = false;
         flamethrowerBar.enabled = false;
 
@@ -224,7 +224,7 @@ public class PlayerShoot : MonoBehaviour
         flamethrowerActive = true;
         superShotActive = false;
         mineActive = false;
-        //turretActive = false;
+        turretActive = false;
         missileActive = false;
     }
 
@@ -234,7 +234,7 @@ public class PlayerShoot : MonoBehaviour
         flamethrowerBar.enabled = false;
         flamethrowerActive = false;
         superShotActive = false;
-        //turretActive = false;
+        turretActive = false;
         missileActive = false;
 
         superBullet = superShots[1];
@@ -264,7 +264,7 @@ public class PlayerShoot : MonoBehaviour
         flamethrowerBar.enabled = false;
         flamethrowerActive = false;
         superShotActive = false;
-        //turretActive = false;
+        turretActive = false;
 
         superBullet = superShots[3];
         superShotAmmoMax = 3;
