@@ -9,6 +9,8 @@ TagManager:
   - wall
   - bullet
   - flames
+  - bonus
+  - spawnPos
   layers:
   - Default
   - TransparentFX

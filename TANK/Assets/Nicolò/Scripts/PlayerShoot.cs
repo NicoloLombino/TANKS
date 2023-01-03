@@ -8,6 +8,7 @@ public class PlayerShoot : MonoBehaviour
     [Tooltip("mi serve per il missile telecomandato (missile) per dare il target")]
     public GameObject TANK_ENEMY;
 
+    //public SoundManager SoundManager;
     public GameObject hole;
 
     [Header("all for normal shot")]
@@ -17,6 +18,7 @@ public class PlayerShoot : MonoBehaviour
     public float shotTimer;
     public float shootDelay;
     public GameObject particleShot;
+    public int personalDamage;
 
     [Tooltip("the key for normal shoot")]
     public KeyCode shootKey;
@@ -46,7 +48,10 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (flamethrowerActive == true)
+        {
+            flamethrowerEnergy = 50;
+        }
     }
 
     // Update is called once per frame
@@ -115,10 +120,11 @@ public class PlayerShoot : MonoBehaviour
             if (Time.time >= shotTimer)
             {
                 GameObject NormalBullet = Instantiate(bullet, hole.transform.position, hole.transform.rotation);
+                NormalBullet.GetComponent<Bullet>().damage += personalDamage;
                 shotTimer = Time.time + shootDelay;
                 GameObject ShotFlash = Instantiate(particleShot, hole.transform.position, hole.transform.rotation);
                 Destroy(ShotFlash, 0.5f);
-                // add sound
+                //SoundManager.bulletSound.Play();
             }
         }
     }
@@ -132,7 +138,7 @@ public class PlayerShoot : MonoBehaviour
             GameObject S_ShotFlash = Instantiate(particleShot, hole.transform.position, hole.transform.rotation);
             S_ShotFlash.transform.localScale += new Vector3(2, 2, 2);
             Destroy(S_ShotFlash, 0.5f);
-            // add sound
+            //SoundManager.bazookaSound.Play();
         }
     }
 
@@ -153,6 +159,7 @@ public class PlayerShoot : MonoBehaviour
         {
             GameObject SuperMine = Instantiate(superBullet, gameObject.transform.position, gameObject.transform.rotation);
             superShotAmmo--;
+            //SoundManager.mineSound.Play();
         }
     }
 
@@ -160,8 +167,9 @@ public class PlayerShoot : MonoBehaviour
     {
         if (superShotAmmo >= 1)
         {
-            GameObject SuperTurret = Instantiate(superBullet, gameObject.transform.position + new Vector3(0,0.5f,0), gameObject.transform.rotation);
+            GameObject SuperTurret = Instantiate(superBullet, hole.transform.position + new Vector3(0,-1.5f,0), hole.transform.rotation);
             superShotAmmo--;
+            //SoundManager.turretSound.Play();
         }
     }
 
@@ -175,7 +183,7 @@ public class PlayerShoot : MonoBehaviour
             GameObject S_ShotFlash = Instantiate(particleShot, hole.transform.position, hole.transform.rotation);
             S_ShotFlash.transform.localScale += new Vector3(2, 2, 2);
             Destroy(S_ShotFlash, 0.5f);
-            // add sound
+            //SoundManager.missileSound.Play();
         }
     }
 

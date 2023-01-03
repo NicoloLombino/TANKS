@@ -22,8 +22,9 @@ public class Bullet : MonoBehaviour
         transform.position += transform.forward * speedOffset * Time.deltaTime;
     }
 
-  /*  private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
+        /*
         if(collision.gameObject.tag == "tank")
         {
             //collision.gameObject.GetComponent<Player>().UpdateHealth(damage);
@@ -31,5 +32,14 @@ public class Bullet : MonoBehaviour
             Destroy(BulletExplosion, 1f);
             Destroy(gameObject);
         }
-    }*/
+        */
+
+        if (collision.gameObject.tag == "wall")
+        {
+            Debug.Log("entrato (BULLET)");
+            GameObject BulletExplosion = Instantiate(hitParticle, gameObject.transform.position + new Vector3(0f, 0f, 0f), Quaternion.identity);
+            Destroy(BulletExplosion, 1f);
+            Debug.Log("finito (BULLET)");
+        }
+    }
 }

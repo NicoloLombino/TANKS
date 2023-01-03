@@ -98,6 +98,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        /*
         if (other.gameObject.tag == "wall")
         {
             if (Input.GetKey(moveStraight) && canMove == true)
@@ -112,10 +113,11 @@ public class Player : MonoBehaviour
                 //particleSystemMove.SetActive(true);
             }
         }
+        */
 
         if (other.gameObject.tag == "flames")
         {
-            int damage = other.GetComponent<Bullet>().damage;
+            float damage = other.GetComponent<Flames>().damage;
             UpdateHealth(damage);
         }
     }

@@ -8,6 +8,8 @@ public class Flamethrower : MonoBehaviour
     public GameObject flames;
     public float flameTimer;
 
+    public GameObject tankOwner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,8 @@ public class Flamethrower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameObject.transform.position = tankOwner.transform.position /*+ new Vector3(0, 0f, 2)*/;
+        gameObject.transform.eulerAngles = tankOwner.transform.eulerAngles;
     }
 
     private void OnTriggerStay(Collider other)
