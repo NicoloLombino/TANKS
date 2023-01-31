@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    Rigidbody rb;
+    //Rigidbody rb;
 
     [Header("movement")]
     public float speed;
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -60,14 +60,23 @@ public class Player : MonoBehaviour
         {
             //rb.AddForce(Vector3.forward * -speed * 10, ForceMode.Force);
             transform.position += transform.forward * speed * Time.deltaTime;
+            //rb.AddForce(Vector3.forward * speed * Time.deltaTime);
+            //Vector3 velocity = new Vector3(0, 0, speed);
+            //rb.velocity = rb.transform.TransformDirection(velocity);
             //particleSystemMove.SetActive(true);
+            //Vector3 movement = transform.forward * speed * Time.deltaTime;
+            //rb.MovePosition(rb.position + movement);
         }
 
         else if (Input.GetKey(moveBackwards) && canMove == true)
         {
             //rb.AddForce(Vector3.forward * speed * 10, ForceMode.Force);
             transform.position -= transform.forward * speed * Time.deltaTime;
+            //Vector3 angularVel = new Vector3(0, rotateSpeed, 0);
+            //rb.angularVelocity = angularVel;
             //particleSystemMove.SetActive(true);
+            //Vector3 movement = transform.forward * -speed * Time.deltaTime;
+            //rb.MovePosition(rb.position + movement);
         }
     }
 
