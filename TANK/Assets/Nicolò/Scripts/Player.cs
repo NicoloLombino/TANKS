@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     //Rigidbody rb;
+    CharacterController cc;
 
     [Header("movement")]
     public float speed;
+    public float speedToGive;
     public float rotateSpeed;
     public GameObject particleSystemMove;
     public bool canMove;
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
+        cc = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -55,29 +58,20 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        
+        cc.Move(transform.forward * speed * Time.smoothDeltaTime - Vector3.up * 9.81f * Time.deltaTime);
+
         if (Input.GetKey(moveStraight) && canMove == true)
         {
-            //rb.AddForce(Vector3.forward * -speed * 10, ForceMode.Force);
-            transform.position += transform.forward * speed * Time.deltaTime;
-            //rb.AddForce(Vector3.forward * speed * Time.deltaTime);
-            //Vector3 velocity = new Vector3(0, 0, speed);
-            //rb.velocity = rb.transform.TransformDirection(velocity);
-            //particleSystemMove.SetActive(true);
-            //Vector3 movement = transform.forward * speed * Time.deltaTime;
-            //rb.MovePosition(rb.position + movement);
+            speed = speedToGive;
+            //transform.position += transform.forward * speed * Time.deltaTime;
         }
 
         else if (Input.GetKey(moveBackwards) && canMove == true)
         {
-            //rb.AddForce(Vector3.forward * speed * 10, ForceMode.Force);
-            transform.position -= transform.forward * speed * Time.deltaTime;
-            //Vector3 angularVel = new Vector3(0, rotateSpeed, 0);
-            //rb.angularVelocity = angularVel;
-            //particleSystemMove.SetActive(true);
-            //Vector3 movement = transform.forward * -speed * Time.deltaTime;
-            //rb.MovePosition(rb.position + movement);
+            speed = -speedToGive;
+            //transform.position -= transform.forward * speed * Time.deltaTime;
         }
+        else { speed = 0; }
     }
 
     private void Rotate()
@@ -143,6 +137,4 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
-
 }

@@ -31,7 +31,7 @@ public class Mine : MonoBehaviour
     {
         if (other.gameObject.tag == "tank")
         {
-            other.gameObject.GetComponent<Player>().UpdateHealth(damage);
+            other.gameObject.GetComponentInParent<Player>().UpdateHealth(damage);
             GameObject Kaboom = Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(Kaboom, 2f);
             Destroy(gameObject);
