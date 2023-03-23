@@ -27,13 +27,14 @@ public class Flamethrower : MonoBehaviour
     {
        if (other.gameObject.tag == "tank")
        {
-            other.gameObject.GetComponentInParent<Player>().UpdateHealth(damage);
-            flameTimer = Random.Range(1, 20);
-            if (flameTimer >= 17)
+            
+            flameTimer = Random.Range(1, 21);
+            if (flameTimer >= 18)
             {
                 GameObject FlamesObj = Instantiate(flames, other.gameObject.transform.position + new Vector3(0f,1.15f, -0.75f), other.gameObject.transform.rotation);
                 FlamesObj.transform.parent = other.gameObject.transform;
             }
-       }
+            other.gameObject.GetComponentInParent<Player>().UpdateHealth(damage);
+        }
     }
 }

@@ -24,16 +24,16 @@ public class AllBonus : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "tank")
+        if (other.gameObject.tag == "tank")
         {
-            
+
             if (isShield && used == false)
             {
-                collision.gameObject.GetComponent<Player>().UpdateHealth(-20);
+                other.gameObject.GetComponent<Player>().UpdateHealth(-20);
                 used = true;
-                GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0,0));
+                GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
                 Destroy(BonusSparks, 1);
                 audio.PlayOneShot(audio.clip);
                 Destroy(gameObject);
@@ -42,7 +42,7 @@ public class AllBonus : MonoBehaviour
 
             if (isCoin && used == false)
             {
-                collision.gameObject.GetComponent<PlayerShoot>().personalDamage += 5;
+                other.gameObject.GetComponent<PlayerShoot>().personalDamage += 5;
                 used = true;
                 GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
                 Destroy(BonusSparks, 1);
@@ -52,14 +52,49 @@ public class AllBonus : MonoBehaviour
 
             if (isSword && used == false)
             {
-                collision.gameObject.GetComponent<PlayerShoot>().superShotAmmo += 1;
-                collision.gameObject.GetComponent<PlayerShoot>().flamethrowerEnergy += 50;
+                other.gameObject.GetComponent<PlayerShoot>().superShotAmmo += 1;
+                other.gameObject.GetComponent<PlayerShoot>().flamethrowerEnergy += 50;
                 used = true;
                 GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
                 Destroy(BonusSparks, 1);
                 audio.PlayOneShot(audio.clip);
                 Destroy(gameObject);
             }
+        }
+    }
+
+    public void GiveBonus(GameObject player)
+    {
+        if (isShield && used == false)
+        {
+            player.GetComponent<Player>().UpdateHealth(-20);
+            used = true;
+            GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
+            Destroy(BonusSparks, 1);
+            audio.PlayOneShot(audio.clip);
+            Destroy(gameObject);
+
+        }
+
+        if (isCoin && used == false)
+        {
+            player.GetComponent<PlayerShoot>().personalDamage += 5;
+            used = true;
+            GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
+            Destroy(BonusSparks, 1);
+            audio.PlayOneShot(audio.clip);
+            Destroy(gameObject);
+        }
+
+        if (isSword && used == false)
+        {
+            player.GetComponent<PlayerShoot>().superShotAmmo += 1;
+            player.GetComponent<PlayerShoot>().flamethrowerEnergy += 50;
+            used = true;
+            GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
+            Destroy(BonusSparks, 1);
+            audio.PlayOneShot(audio.clip);
+            Destroy(gameObject);
         }
     }
 }

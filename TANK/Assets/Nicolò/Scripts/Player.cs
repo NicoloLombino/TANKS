@@ -50,8 +50,10 @@ public class Player : MonoBehaviour
         if(health <= 0)
         {
             canMove = false;
-            fireParticles.SetActive(true);
+            gameObject.GetComponent<PlayerShoot>().enabled = false;
             GameOverPanel.SetActive(true);
+            fireParticles.SetActive(true);
+            
             ExplosionSound.Play();
         }
     }
@@ -101,22 +103,6 @@ public class Player : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        /*
-        if (other.gameObject.tag == "wall")
-        {
-            if (Input.GetKey(moveStraight) && canMove == true)
-            {
-                transform.position -= transform.forward * speed * Time.deltaTime;
-                //particleSystemMove.SetActive(true);
-            }
-
-            else if (Input.GetKey(moveBackwards) && canMove == true)
-            {
-                //transform.position += transform.forward * speed * Time.deltaTime;
-                //particleSystemMove.SetActive(true);
-            }
-        }
-        */
 
         if (other.gameObject.tag == "flames")
         {
@@ -135,6 +121,11 @@ public class Player : MonoBehaviour
             BulletExplosion.transform.parent = gameObject.transform;
             Destroy(BulletExplosion, 1f);
             Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.tag == "bonus")
+        {
+            other.gameObject.GetComponent<AllBonus>().GiveBonus(this.gameObject);
         }
     }
 }
