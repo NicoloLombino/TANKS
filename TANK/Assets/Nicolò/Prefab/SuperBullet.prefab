@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedOffset: 30
-  damage: 30
+  damage: 25
   timeToDestroy: 5
   hitParticle: {fileID: 6126902927806394485, guid: 4e6bc97cd550bf240a474ce59352e144,
     type: 3}
