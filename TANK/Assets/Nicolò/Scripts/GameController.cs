@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-
+    public string linkPortfolio;
     
+
     public bool isGame;
 
     public GameObject blackPanel;
@@ -31,6 +33,12 @@ public class GameController : MonoBehaviour
                 blackPanel.SetActive(false);
             }
         }
+
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
 
@@ -41,4 +49,8 @@ public class GameController : MonoBehaviour
         timer = Time.time + time;
     }
 
+    public void OpenLink()
+    {
+        Application.OpenURL(@linkPortfolio);
+    }
 }

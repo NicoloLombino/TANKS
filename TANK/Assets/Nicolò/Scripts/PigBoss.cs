@@ -11,7 +11,7 @@ public class PigBoss : MonoBehaviour
     [SerializeField] float attackTimer;
     [SerializeField] float timeToNextAttack;
     [SerializeField] bool isAttacking;
-    Vector3 startPos;
+    public Vector3 startPos;
 
     public GameObject[] weapons;
     public GameObject bombPrefab;
@@ -25,14 +25,15 @@ public class PigBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position;
+        startPos = transform.localPosition;
         BombAttack();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = startPos;
+        transform.localPosition = startPos;
+        //transform.localPosition = new Vector3(transform.localPosition.x, 3.8f, transform.localPosition.z);
         if (Time.time >= timeToNextAttack && !isAttacking)
         {
             RandomAttack();

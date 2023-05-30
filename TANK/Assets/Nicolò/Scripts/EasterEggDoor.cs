@@ -9,6 +9,7 @@ public class EasterEggDoor : MonoBehaviour
     public GameObject zoneParticles;
 
     public GameObject easterEggZone;
+    public GameObject dontStopText;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,11 @@ public class EasterEggDoor : MonoBehaviour
             Destroy(part, 1);
             counter++;
 
+            if(counter == 40 && dontStopText != null)
+            {
+                dontStopText.SetActive(true);
+                Destroy(dontStopText, 3);
+            }
             if(counter >= 100)
             {
                 easterEggZone.SetActive(true);

@@ -40,15 +40,15 @@ public class PigZoneTrigger : MonoBehaviour
 
     public IEnumerator StartZone()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         text1.SetActive(true);
         Destroy(text1, 3);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         text2.SetActive(true);
         Destroy(text2, 3);
-        yield return new WaitForSeconds(1);
-        text3.SetActive(true);
         yield return new WaitForSeconds(3);
+        text3.SetActive(true);
+        yield return new WaitForSeconds(5);
         text3.GetComponent<Image>().color = Color.black;
         text3.GetComponentInChildren<Text>().color = Color.black;
         Destroy(text3, 0.03f);

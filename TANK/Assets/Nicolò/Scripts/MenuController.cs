@@ -72,4 +72,9 @@ public class MenuController : MonoBehaviour
     {
         Application.LoadLevel(Application.loadedLevel);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
