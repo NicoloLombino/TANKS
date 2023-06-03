@@ -112,11 +112,9 @@ public class PigBoss : MonoBehaviour
     public void TurretAttack()
     {
         StartCoroutine(Attack(weapons[1], 11));
-        //GameObject turretGroup = Instantiate(weapons[1]);
-        //turretGroup.SetActive(true);
+
         float rndRot = Random.Range(-70, +71);
         weapons[1].transform.localEulerAngles = new Vector3(weapons[1].transform.eulerAngles.x, rndRot, weapons[1].transform.eulerAngles.z);
-        //StartCoroutine(SpawnAttack(turretGroup));
 
         timeToNextAttack = Time.time + attackTimer + 2;
     }
@@ -124,12 +122,6 @@ public class PigBoss : MonoBehaviour
     public void FlameAttack()
     {
         StartCoroutine(Attack(weapons[2], 12));
-        //GameObject flameGroup = Instantiate(weapons[2]);
-        //flameGroup.SetActive(true);
-        //float rndRot = Random.Range(0, +71);
-        //flameGroup.transform.eulerAngles = new Vector3(flameGroup.transform.eulerAngles.x, rndRot, flameGroup.transform.eulerAngles.z);
-        //StartCoroutine(SpawnAttack(weapons[2]));
-
         timeToNextAttack = Time.time + attackTimer + 1;
     }
 

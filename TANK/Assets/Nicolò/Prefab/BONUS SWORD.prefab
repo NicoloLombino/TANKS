@@ -105,6 +105,8 @@ MonoBehaviour:
   particles: {fileID: 4136489541100757555, guid: 0e65def11980da749966f7dd23636c8e,
     type: 3}
   audio: {fileID: -4666816390239520739}
+  audioObj: {fileID: 5571010851837348845, guid: 471e6685e96885946b2b46dbbd939435,
+    type: 3}
 --- !u!82 &-4666816390239520739
 AudioSource:
   m_ObjectHideFlags: 0

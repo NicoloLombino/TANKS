@@ -45,6 +45,13 @@ public class PlayerShoot : MonoBehaviour
 
     public GameObject[] superShots;
 
+    private Vector3 flamethrowerAreaStart = new Vector3(2, 2, 0);
+    private Vector3 flamethrowerAreaEnd = new Vector3(2, 2, 9);
+    private float flamethrowerAreaIncrement;
+
+    private Vector3 flamethrowerCenterStart = new Vector3(0, -0.5f, 0);
+    private Vector3 flamethrowerCenterEnd = new Vector3(0, -0.5f, 5);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,6 +98,7 @@ public class PlayerShoot : MonoBehaviour
         else if (Input.GetKeyUp(superShootKey) && flamethrowerActive)
         {
             flamethrowerObject.SetActive(false);
+            flamethrowerAreaIncrement = 0;
         }
 
         else if (Input.GetKeyDown(superShootKey) && mineActive)
@@ -108,6 +116,7 @@ public class PlayerShoot : MonoBehaviour
         { 
             shootEnergy += 0.07f;
             flamethrowerEnergy += 0.02f;
+            flamethrowerAreaIncrement = 0; 
         }
     }
 
@@ -147,10 +156,19 @@ public class PlayerShoot : MonoBehaviour
         if (flamethrowerEnergy >= 0)
         {
             flamethrowerObject.SetActive(true);
-            flamethrowerEnergy -= 0.08f;
+            flamethrowerAreaIncrement += Time.deltaTime;
+            float flamethrowerAreaIncrementPercentage = flamethrowerAreaIncrement / 1.5f;
+            //float flamethrowerCenterIncrementPercentage = flamethrowerAreaIncrement / 6;
+            flamethrowerObject.GetComponent<BoxCollider>().size = Vector3.Lerp(flamethrowerAreaStart, flamethrowerAreaEnd, flamethrowerAreaIncrementPercentage);
+            flamethrowerObject.GetComponent<BoxCollider>().center = Vector3.Lerp(flamethrowerCenterStart, flamethrowerCenterEnd, flamethrowerAreaIncrementPercentage);
+            flamethrowerEnergy -= 0.08f;          
         }
 
-        else { flamethrowerObject.SetActive(false); }
+        else
+        { 
+            flamethrowerObject.SetActive(false);
+            flamethrowerAreaIncrement = 0;
+        }
     }
 
     void Mine()

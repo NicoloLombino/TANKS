@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EasterEggDoor : MonoBehaviour
 {
@@ -36,9 +37,13 @@ public class EasterEggDoor : MonoBehaviour
             if(counter == 40 && dontStopText != null)
             {
                 dontStopText.SetActive(true);
-                Destroy(dontStopText, 3);
             }
-            if(counter >= 100)
+            else if (counter == 50 && dontStopText != null)
+            {
+                dontStopText.GetComponent<Image>().color = Color.black;
+                Destroy(dontStopText, 0.03f);
+            }
+            if (counter >= 100)
             {
                 easterEggZone.SetActive(true);
                 zoneParticles.SetActive(true);

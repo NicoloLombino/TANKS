@@ -36,10 +36,8 @@ public class Bullet : MonoBehaviour
 
         if (collision.gameObject.tag == "wall")
         {
-            Debug.Log("entrato (BULLET)");
             GameObject BulletExplosion = Instantiate(hitParticle, gameObject.transform.position + new Vector3(0f, 0f, 0f), Quaternion.identity);
             Destroy(BulletExplosion, 1f);
-            Debug.Log("finito (BULLET)");
         }
     }
 }

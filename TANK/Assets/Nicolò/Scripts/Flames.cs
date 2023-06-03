@@ -23,7 +23,6 @@ public class Flames : MonoBehaviour
         if (other.gameObject.tag == "tank")
         {
             other.gameObject.GetComponentInParent<Player>().UpdateHealth(damage);
-            Debug.Log("bruciato");
         }
     }
 }

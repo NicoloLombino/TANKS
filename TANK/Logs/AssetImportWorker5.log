@@ -1,0 +1,266 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.6f1 (7da38d85baf6) revision 8233869'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Core' Language: 'it' Physical Memory: 16147 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+C:/Users/Nicolò/Desktop/TANKS_git/TANK
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+52455
+Successfully changed project path to: C:/Users/Nicolò/Desktop/TANKS_git/TANK
+C:/Users/Nicolò/Desktop/TANKS_git/TANK
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 208.15 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.6f1 (7da38d85baf6)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Nicolò/Desktop/TANKS_git/TANK/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2520)
+    Vendor:   NVIDIA
+    VRAM:     6023 MB
+    Driver:   31.0.15.1748
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56472
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006382 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 158.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.886 seconds
+Domain Reload Profiling:
+	ReloadAssembly (887ms)
+		BeginReloadAssembly (115ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (635ms)
+			LoadAssemblies (112ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (158ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (382ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (159ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (158ms)
+				ProcessInitializeOnLoadMethodAttributes (52ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006847 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\Nicolò\Desktop\TANKS_git\TANK\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\Nicolò\Desktop\TANKS_git\TANK\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  1.415 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1416ms)
+		BeginReloadAssembly (130ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (1160ms)
+			LoadAssemblies (114ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (306ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (632ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (112ms)
+				ProcessInitializeOnLoadAttributes (367ms)
+				ProcessInitializeOnLoadMethodAttributes (140ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4324 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 66 unused Assets / (1.3 MB). Loaded Objects now: 4753.
+Memory consumption went from 155.4 MB to 154.1 MB.
+Total: 9.177800 ms (FindLiveObjects: 0.450700 ms CreateObjectMapping: 0.334600 ms MarkObjects: 7.967900 ms  DeleteObjects: 0.422600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 786219.398838 seconds.
+  path: Assets/Nicolò/Prefab/BONUS COIN.prefab
+  artifactKey: Guid(1246265d1072b264fa100b6a1c381715) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/BONUS COIN.prefab using Guid(1246265d1072b264fa100b6a1c381715) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa7299877bff3e3c7e403d705a861a17') in 0.208396 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Nicolò/Prefab/Missile 1.prefab
+  artifactKey: Guid(56227632609ac2d46ab3c1d7480cbe13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/Missile 1.prefab using Guid(56227632609ac2d46ab3c1d7480cbe13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06f07a2c47713a79f472197782a97688') in 0.500920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Nicolò/Prefab/SuperBullet.prefab
+  artifactKey: Guid(cc5a7f8bc36187d47a68435cb9245f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/SuperBullet.prefab using Guid(cc5a7f8bc36187d47a68435cb9245f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e26b95211a22893e8693ae9636cf613') in 0.056973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Nicolò/Prefab/Turret5.prefab
+  artifactKey: Guid(980b465d2c695ab40a3d28a9d87abe17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/Turret5.prefab using Guid(980b465d2c695ab40a3d28a9d87abe17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '701116c0f34481e35d23242af7a08a24') in 0.119659 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Nicolò/Prefab/NormalShot.prefab
+  artifactKey: Guid(0412764c19a445e4ab63977788ff465d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/NormalShot.prefab using Guid(0412764c19a445e4ab63977788ff465d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7107916458514c853a4ee9fafc9e24b0') in 0.032430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Nicolò/Prefab/TinyExplosionGreat.prefab
+  artifactKey: Guid(67026fe3742f557458ae76cd6be0861d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/TinyExplosionGreat.prefab using Guid(67026fe3742f557458ae76cd6be0861d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f842437a88ef0f5ebc039d2a7432a025') in 0.196352 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Nicolò/Prefab/TinyFlamesMIO.prefab
+  artifactKey: Guid(ce29cf52e39174f489e9456cb5952e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/TinyFlamesMIO.prefab using Guid(ce29cf52e39174f489e9456cb5952e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f02110078cb6bd1184ac31358de8cdf') in 0.030823 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Nicolò/Prefab/Mine.prefab
+  artifactKey: Guid(a903ceb6bdf22054a8938c09e2fff6b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/Mine.prefab using Guid(a903ceb6bdf22054a8938c09e2fff6b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bbdf749d6d238b82b27867a97e5e33d') in 0.189294 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Nicolò/Prefab/SuperShot.prefab
+  artifactKey: Guid(1d8e560ba5c7a864a9997d9259af4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/SuperShot.prefab using Guid(1d8e560ba5c7a864a9997d9259af4aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f2e23b78b2d90031ce4094849f53cf3') in 0.040328 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/Nicolò/Prefab/Sketchfab_2022_03_13_13_58_26.prefab
+  artifactKey: Guid(fcc4bb4c9e12b4b40ab76be5dd255ca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/Sketchfab_2022_03_13_13_58_26.prefab using Guid(fcc4bb4c9e12b4b40ab76be5dd255ca9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bed6ea8a98d6a7405ab5c2681d1cbccd') in 0.034995 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Nicolò/Prefab/NormalBullert 1.prefab
+  artifactKey: Guid(a76a8006b6101184784da9bacc45e6d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab/NormalBullert 1.prefab using Guid(a76a8006b6101184784da9bacc45e6d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3674293db4e7a369d0aa22fb9dec13f2') in 0.295780 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.834194 seconds.
+  path: Assets/Nicolò/Sounds/163410__baryy__old-mechanism-clicking.aiff
+  artifactKey: Guid(764bff5f61230d543853da8bff0aaa9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Sounds/163410__baryy__old-mechanism-clicking.aiff using Guid(764bff5f61230d543853da8bff0aaa9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3a7e34bccd5758407725744010719b2') in 0.091652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Nicolò/Sounds/471642__puerta118m__bomb-grenade-shot-at-enemy.wav
+  artifactKey: Guid(db9726031ff754a4a84e5c27d33bcaa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Sounds/471642__puerta118m__bomb-grenade-shot-at-enemy.wav using Guid(db9726031ff754a4a84e5c27d33bcaa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '360c7995cb035daf2a2dbd73ab8b2127') in 0.027914 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/Nicolò/Sounds/476740__cjdeets__shot-scifi-powerdown.wav
+  artifactKey: Guid(5cbce792539e6394ba001b57ba422c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Sounds/476740__cjdeets__shot-scifi-powerdown.wav using Guid(5cbce792539e6394ba001b57ba422c8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c52baa05c30032701771b7a6318c4d9b') in 0.021633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Nicolò/Sounds/540828__eminyildirim__fire-fuse-ignite-flame.wav
+  artifactKey: Guid(5cb1904bb294e7146aa5973e821ee2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Sounds/540828__eminyildirim__fire-fuse-ignite-flame.wav using Guid(5cb1904bb294e7146aa5973e821ee2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9414951cd31d1e02136c08d14ede8bea') in 0.016541 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/Nicolò/Sounds/179005__smartwentcody__bullet-casing-on-concrete-2.wav
+  artifactKey: Guid(f1ce5d825544ed94c8e614d8db47e785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Sounds/179005__smartwentcody__bullet-casing-on-concrete-2.wav using Guid(f1ce5d825544ed94c8e614d8db47e785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37cd864975f9815f5dc75b44515a990b') in 0.016020 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.775951 seconds.
+  path: Assets/Nicolò/Prefab vari/WPN_cal_9mm (1).prefab
+  artifactKey: Guid(c68be0235a635aa4ab9b686201d989ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Nicolò/Prefab vari/WPN_cal_9mm (1).prefab using Guid(c68be0235a635aa4ab9b686201d989ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42f91b31d7ef2b0d7362b6a456a8cbdc') in 0.116888 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
