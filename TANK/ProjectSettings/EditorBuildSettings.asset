@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Nicol\xF2/Scene/GAME.unity"
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: "Assets/Nicol\xF2/Scene/Map Playground.unity"
+    guid: 4ddd263994f836644a7b5ba3e765f5fd
+  - enabled: 1
+    path: "Assets/Nicol\xF2/Scene/Map Forest.unity"
+    guid: 14cab5a8708be244f910ba767171ba4d
+  - enabled: 1
+    path: "Assets/Nicol\xF2/Scene/Map Desert.unity"
+    guid: 744ae2c2573c29f43b424998c6a8c6ec
+  - enabled: 1
+    path: "Assets/Nicol\xF2/Scene/Map Arena.unity"
+    guid: b4e73e8fe01eb75459620c9eecd707b8
   m_configObjects: {}

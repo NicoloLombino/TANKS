@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -52,5 +53,10 @@ public class GameController : MonoBehaviour
     public void OpenLink()
     {
         Application.OpenURL(@linkPortfolio);
+    }
+
+    public void LoadMapScene(int mapID)
+    {
+        SceneManager.LoadScene(mapID, LoadSceneMode.Additive);
     }
 }
