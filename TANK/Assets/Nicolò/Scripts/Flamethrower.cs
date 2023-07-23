@@ -5,18 +5,10 @@ using UnityEngine;
 public class Flamethrower : MonoBehaviour
 {
     public float damage;
-    public GameObject flames;
-    public float flameTimer;
+    public Flames flames;
 
     public GameObject tankOwner;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         gameObject.transform.position = tankOwner.transform.position /*+ new Vector3(0, 0f, 2)*/;
@@ -25,14 +17,16 @@ public class Flamethrower : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-       if (other.gameObject.tag == "tank")
+       if (other.gameObject.tag == "tank" && other.gameObject != tankOwner)
        {
-            
-            flameTimer = Random.Range(1, 21);
-            if (flameTimer >= 18)
+            bool flameCreated = false;
+
+            if (!flameCreated)
             {
-                GameObject FlamesObj = Instantiate(flames, other.gameObject.transform.position + new Vector3(0f,1.15f, -0.75f), other.gameObject.transform.rotation);
-                FlamesObj.transform.parent = other.gameObject.transform;
+                other.gameObject.GetComponent<Player>().flamethrowerHitFlames.gameObject.SetActive(true);
+                //flames.transform.parent = other.gameObject.transform;
+                //flames.transform.position += new Vector3(0f,1.15f, -0.75f);
+                flameCreated = true;
             }
             other.gameObject.GetComponentInParent<Player>().UpdateHealth(damage);
         }

@@ -12,16 +12,9 @@ public class AllBonus : MonoBehaviour
     public GameObject particles;
     public AudioSource audio;
 
-    // Start is called before the first frame update
     void Start()
     {
         audio = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -63,38 +56,4 @@ public class AllBonus : MonoBehaviour
         }
     }
 
-    public void GiveBonus(GameObject player)
-    {
-        if (isShield && used == false)
-        {
-            player.GetComponent<Player>().UpdateHealth(-20);
-            used = true;
-            GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
-            Destroy(BonusSparks, 1);
-            audio.PlayOneShot(audio.clip);
-            Destroy(gameObject);
-
-        }
-
-        if (isCoin && used == false)
-        {
-            player.GetComponent<PlayerShoot>().personalDamage += 5;
-            used = true;
-            GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
-            Destroy(BonusSparks, 1);
-            audio.PlayOneShot(audio.clip);
-            Destroy(gameObject);
-        }
-
-        if (isSword && used == false)
-        {
-            player.GetComponent<PlayerShoot>().superShotAmmo += 1;
-            player.GetComponent<PlayerShoot>().flamethrowerEnergy += 50;
-            used = true;
-            GameObject BonusSparks = Instantiate(particles, transform.position, Quaternion.Euler(-90, 0, 0));
-            Destroy(BonusSparks, 1);
-            audio.PlayOneShot(audio.clip);
-            Destroy(gameObject);
-        }
-    }
 }

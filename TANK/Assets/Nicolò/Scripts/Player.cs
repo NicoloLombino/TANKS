@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    //Rigidbody rb;
     CharacterController cc;
 
     [Header("movement")]
@@ -31,23 +30,19 @@ public class Player : MonoBehaviour
     public AudioSource ExplosionSound;
     public GameObject GameOverPanel;
 
+    public Flames flamethrowerHitFlames;
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
         Rotate();
 
-        if(health <= 0)
+        if(health <= 0 && canMove)
         {
             canMove = false;
             gameObject.GetComponent<PlayerShoot>().enabled = false;
@@ -94,10 +89,12 @@ public class Player : MonoBehaviour
         health -= damage;
         healthUI.fillAmount = health / maxHealth;
 
-        if(health <= 0)
+        bool isDead = false;
+        if(health <= 0 && !isDead)
         {
             GameObject Explosion = Instantiate(particleExplosion, gameObject.transform.position, Quaternion.identity);
             Destroy(Explosion, 1f);
+            isDead = true;
         }
     }
 
@@ -121,11 +118,6 @@ public class Player : MonoBehaviour
             BulletExplosion.transform.parent = gameObject.transform;
             Destroy(BulletExplosion, 1f);
             Destroy(other.gameObject);
-        }
-
-        if (other.gameObject.tag == "bonus")
-        {
-            other.gameObject.GetComponent<AllBonus>().GiveBonus(this.gameObject);
         }
     }
 }

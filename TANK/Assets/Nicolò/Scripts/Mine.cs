@@ -10,13 +10,6 @@ public class Mine : MonoBehaviour
     public float timer;
     public float timerToActive;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //gameObject.GetComponent<BoxCollider>().enabled = false;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;

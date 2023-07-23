@@ -11,6 +11,7 @@ TagManager:
   - flames
   - bonus
   - spawnPos
+  - Flamethrower
   layers:
   - Default
   - TransparentFX

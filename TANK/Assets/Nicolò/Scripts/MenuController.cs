@@ -9,18 +9,6 @@ public class MenuController : MonoBehaviour
 
     public bool isTank1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ChosenTank1()
     {
         isTank1 = true;

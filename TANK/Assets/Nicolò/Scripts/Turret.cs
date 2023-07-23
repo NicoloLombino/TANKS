@@ -11,13 +11,11 @@ public class Turret : MonoBehaviour
 
     public float shotTimer;
     public float shotDelay;
-    // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, timeToDestroy);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time >= shotTimer)

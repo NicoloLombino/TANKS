@@ -14,13 +14,6 @@ public class PigZoneTrigger : MonoBehaviour
     public GameObject text2;
     public GameObject text3;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (pigBoss.GetComponent<Player>().health <= 0)

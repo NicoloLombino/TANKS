@@ -10,13 +10,6 @@ public class CameraFollow : MonoBehaviour
     public bool isChild;
     public GameController GC;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (GC.isGame == true)

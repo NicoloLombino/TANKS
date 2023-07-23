@@ -22,14 +22,15 @@ public class PigBoss : MonoBehaviour
     public GameObject missile1Hole;
     public GameObject missile2Hole;
 
-    // Start is called before the first frame update
     void Start()
     {
         startPos = transform.localPosition;
         BombAttack();
+
+        player1 = GameObject.Find("CompleteTank 1");
+        player2 = GameObject.Find("CompleteTank 2");
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.localPosition = startPos;
